@@ -4,7 +4,7 @@
 
 <h1>Schedules</h1>
 
-<%= link_to 'イベント追加'%>
+<%= link_to 'イベント追加', new_schedule_path %>
 
 <div>
 <%= month_calendar events: @schedules do |date, schedules| %>
