@@ -1,0 +1,20 @@
+<header class="header">
+  <h1>CAR SHARING</h1>
+  <div class='nav'>
+    <ul class='nav-left'>
+      <li><%= link_to 'ユーザー 一覧', "#", class: "category-list" %></li>
+      <li><%= link_to '車 一覧', "#", class: "brand-list" %></li>
+    </ul>
+    <ul class='nav-right'>
+      
+      <% if user_signed_in? %>
+        <li><%= link_to current_user.nickname, "#", class: "user-nickname" %></li>
+        <li><%= link_to 'ログアウト', destroy_user_session_path, method: :delete, class: "logout" %></li>
+      <% else %>
+        <li><%= link_to 'ログイン', new_user_session_path, class: "login" %></li>
+        <li><%= link_to '新規登録', new_user_registration_path, class: "sign-up" %></li>
+      <% end %>
+      
+    </ul>
+  </div>
+</header>
