@@ -1,4 +1,8 @@
 class SchedulesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_schedule, only: [:edit, :update, :show]
+  before_action :move_to_index, only: :edit
+
   def index
     @schedules = Schedule.all
   end
@@ -17,7 +21,17 @@ class SchedulesController < ApplicationController
   end
 
   def show
-    @schedule = Schedule.find(params[:id])
+  end
+
+  def edit
+  end
+
+  def update
+    if @schedule.update(schedule_params)
+      redirect_to schedule_path
+    else
+      render :edit
+    end
   end
 
   private
@@ -25,4 +39,13 @@ class SchedulesController < ApplicationController
   def schedule_params
     params.require(:schedule).permit(:title, :start_time, :end_time, :content).merge(user_id: current_user.id)
   end
+
+  def set_schedule
+    @schedule = Schedule.find(params[:id])
+  end
+
+  def move_to_index
+    redirect_to action: :index unless @schedule.user_id == current_user.id
+  end
+
 end
