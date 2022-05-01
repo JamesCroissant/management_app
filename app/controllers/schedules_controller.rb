@@ -1,4 +1,6 @@
 class SchedulesController < ApplicationController
+  before_action :authenticate_user!, except: [:index, :show]
+
   def index
     @schedules = Schedule.all
   end
@@ -38,4 +40,5 @@ class SchedulesController < ApplicationController
   def schedule_params
     params.require(:schedule).permit(:title, :start_time, :end_time, :content).merge(user_id: current_user.id)
   end
+
 end
