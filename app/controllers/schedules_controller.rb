@@ -1,7 +1,7 @@
 class SchedulesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
-  before_action :set_schedule, only: [:edit, :update, :show]
-  before_action :move_to_index, only: :edit
+  before_action :set_schedule, only: [:edit, :update, :show, :destroy]
+  before_action :move_to_index, only: [:edit, :destroy]
 
   def index
     @schedules = Schedule.all
@@ -32,6 +32,11 @@ class SchedulesController < ApplicationController
     else
       render :edit
     end
+  end
+
+  def destroy
+    @schedule.destroy
+    redirect_to root_path
   end
 
   private
