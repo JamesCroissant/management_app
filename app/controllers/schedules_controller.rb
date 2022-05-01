@@ -1,5 +1,6 @@
 class SchedulesController < ApplicationController
   before_action :authenticate_user!, except: [:index, :show]
+  before_action :set_schedule, only: [:edit, :update, :show]
 
   def index
     @schedules = Schedule.all
@@ -19,15 +20,12 @@ class SchedulesController < ApplicationController
   end
 
   def show
-    @schedule = Schedule.find(params[:id])
   end
 
   def edit
-    @schedule = Schedule.find(params[:id])
   end
 
   def update
-    @schedule = Schedule.find(params[:id])
     if @schedule.update(schedule_params)
       redirect_to schedule_path
     else
@@ -39,6 +37,10 @@ class SchedulesController < ApplicationController
 
   def schedule_params
     params.require(:schedule).permit(:title, :start_time, :end_time, :content).merge(user_id: current_user.id)
+  end
+
+  def set_schedule
+    @schedule = Schedule.find(params[:id])
   end
 
 end
