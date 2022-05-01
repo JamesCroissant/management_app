@@ -15,7 +15,6 @@
   <div>
   <% schedules.each do |schedule| %>
     <div>
-      <%= schedule.user.nickname %>
       <%= link_to schedule.title, schedule_path(schedule.id) %>
       <br>
       <%= schedule.start_time.strftime("%H:%M") %> <a>〜</a>
