@@ -1,0 +1,28 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>タイトル</strong>
+  <%= @schedule.title %>
+</p>
+
+<p>
+  <strong>名前</strong>
+  <%= @schedule.user.nickname %>
+</p>
+
+<p>
+  <strong>時間</strong>
+  <%= @schedule.start_time.strftime("%H:%M") %> <a>〜</a>
+  <%= @schedule.end_time.strftime("%H:%M") %>
+</p>
+
+<p>
+  <strong>内容</strong>
+  <%= @schedule.content %>
+</p>
+
+<% if user_signed_in? && current_user.id == @schedule.user_id %>
+  <%= link_to '編集' %> |
+  <%= link_to '削除' %> |
+<% end %>
+<%= link_to '戻る', root_path %>
