@@ -1,0 +1,31 @@
+<div class="main">
+  <p><%= @nickname %>さんの予定一覧</p>
+  <p> --------------------------------- </p>
+  <% @schedules.each do |schedule| %>
+    <div class="user_wrapper">
+      <p>
+        <strong>日付 : </strong>
+        <%= date %>
+      </p>
+      
+      <p>
+        <strong>時間 : </strong>
+        <%= schedule.start_time.strftime("%H:%M") %> <a>〜</a>
+        <%= schedule.end_time.strftime("%H:%M") %>
+      </p>
+
+      <p>
+        <strong>タイトル : </strong>
+        <%= schedule.title %>
+      </p>
+
+      <span class="name"><%= schedule.content %></span>
+
+      <p> --------------------------------- </p>
+    </div>
+  <% end %>
+
+  <div class="submit">
+    <%= link_to "戻る", root_path, class:"back-btn"%>
+  </div>
+</div>
