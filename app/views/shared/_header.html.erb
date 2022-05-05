@@ -2,8 +2,10 @@
   <h1>CAR SHARING</h1>
   <div class='nav'>
     <ul class='nav-left'>
-      <li><%= link_to 'ユーザー 一覧', "#", class: "category-list" %></li>
       <li><%= link_to '車 一覧', "#", class: "brand-list" %></li>
+      <% if user_signed_in? %>
+        <li><%= link_to '予定一覧', user_path(current_user.id), class: "category-list" %></li>
+      <% end %>
     </ul>
     <ul class='nav-right'>
       
