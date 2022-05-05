@@ -1,23 +1,30 @@
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>タイトル</strong>
+  <strong>タイトル : </strong>
   <%= @schedule.title %>
 </p>
 
+
 <p>
-  <strong>名前</strong>
+  <strong>名前 : </strong>
   <%= @schedule.user.nickname %>
 </p>
 
 <p>
-  <strong>時間</strong>
+  <strong>日付 : </strong>
+  <%= @schedule.start_time.strftime("%Y-%m-%d") %> 〜
+  <%= @schedule.end_time.strftime("%Y-%m-%d") %>
+</p>
+
+<p>
+  <strong>時間 : </strong>
   <%= @schedule.start_time.strftime("%H:%M") %> <a>〜</a>
   <%= @schedule.end_time.strftime("%H:%M") %>
 </p>
 
 <p>
-  <strong>内容</strong>
+  <strong>内容 : </strong>
   <%= @schedule.content %>
 </p>
 
