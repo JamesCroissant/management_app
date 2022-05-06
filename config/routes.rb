@@ -4,6 +4,6 @@ Rails.application.routes.draw do
   root to: "schedules#index"
   resources :schedules
   resources :users, only: :show
-  resources :cars , only: [:new, :create]
+  resources :cars , only: [:index, :new, :create]
 end
  
