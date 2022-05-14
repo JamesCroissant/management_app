@@ -1,0 +1,28 @@
+<div class="car-contents">
+  <h1>車一覧</h1>
+  <% @cars.each do |car| %>
+    <p> ---------------------------------- </p>
+    <p>
+      <strong>車名 : </strong>
+      <%= car.car_name %>
+    </p>
+
+    <p>
+      <strong>持ち主 : </strong>
+      <%= car.user.nickname %>
+    </p>
+
+
+    <p>
+      <strong>車のナンバー : </strong>
+      <%= car.car_number %>
+    </p>
+
+    <p>
+      <strong>車の種類 : </strong>
+      <%= car.car_model %>
+    </p>
+
+  <% end %>
+  <%= link_to '戻る', root_path %>
+</div>
