@@ -24,6 +24,11 @@
 </p>
 
 <p>
+  <strong>使う車： </strong> 
+  <%= link_to Car.find(@schedule.car_id).car_name %>
+</p>
+
+<p>
   <strong>内容 : </strong>
   <%= @schedule.content %>
 </p>

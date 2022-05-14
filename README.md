@@ -24,7 +24,7 @@
 
 | Column               | Type       | Options                        |
 | -------------------- | ---------- | ------------------------------ |
-| car_name             | string     | null: false                    |
+| car_name             | integer    | null: false                    |
 | car_number           | string     | null: false                    |
 | car_model            | string     | null: false                    |
 | user                 | references | null: false, foreign_key: true |
