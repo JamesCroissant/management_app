@@ -52,5 +52,4 @@ class SchedulesController < ApplicationController
   def move_to_index
     redirect_to action: :index unless @schedule.user_id == current_user.id
   end
-
 end
