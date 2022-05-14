@@ -17,7 +17,9 @@
     <%= f.datetime_select :end_time %>
   </div>
 
-  <div class="user-name">
+  <div class="car-name">
+    <%= f.label :car_name %> 
+    <%= f.collection_select(:car_id, Car.all, :id, :car_name, {}, {id:"car-name"}) %>
   </div>
 
   <div class="content">
