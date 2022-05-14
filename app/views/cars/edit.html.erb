@@ -1,0 +1,25 @@
+<h1>車編集投稿</h1>
+
+<%= form_with(model: @car, local: true) do |f| %>
+
+  <div class="car_name">
+    <%= f.label :car_name %>
+    <%= f.text_field :car_name %>
+  </div>
+
+  <div class="car_number">
+    <%= f.label :car__number %>
+    <%= f.text_field :car_number %>
+  </div>
+
+  <div class="car_model">
+    <%= f.label :car_model %>
+    <%= f.text_field :car_model %>
+  </div>
+
+  <div class="submit">
+    <%= f.submit "変更する", class:"save-btn"%>
+    <%= link_to "戻る", car_path(@car.id), class:"back-btn"%>
+  </div>
+
+<% end %>
