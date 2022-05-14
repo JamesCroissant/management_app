@@ -76,6 +76,5 @@ ActiveRecord::Schema.define(version: 2022_05_06_082633) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "cars", "users"
-  add_foreign_key "schedules", "cars"
   add_foreign_key "schedules", "users"
 end
