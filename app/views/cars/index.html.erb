@@ -2,9 +2,10 @@
   <h1>車一覧</h1>
   <% @cars.each do |car| %>
     <p> ---------------------------------- </p>
+    
     <p>
       <strong>車名 : </strong>
-      <%= car.car_name %>
+      <%= link_to car.car_name, car_path(car.id) %>
     </p>
 
     <p>

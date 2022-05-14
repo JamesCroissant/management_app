@@ -25,7 +25,7 @@
 
 <p>
   <strong>使う車： </strong> 
-  <%= link_to Car.find(@schedule.car_id).car_name %>
+  <%= link_to Car.find(@schedule.car_id).car_name, car_path(@schedule.car_id) %>
 </p>
 
 <p>
