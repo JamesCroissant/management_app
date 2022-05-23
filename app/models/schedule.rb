@@ -24,6 +24,7 @@ class Schedule < ApplicationRecord
       .where(car_id: self.car_id)
       .where("end_time > ?", self.start_time)
       .where("start_time < ?", self.end_time)
+      .where.not(id: self.id)                      # 過去に登録したscheduleで引っかからないようにする
 
     if overlapped_schedules.present?
       self.errors.add(:car_id, "はこの時間に使用できません")
