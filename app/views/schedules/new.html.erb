@@ -2,6 +2,8 @@
 
 <%= form_with(model: @schedule, local: true) do |f| %>
 
+<%= render 'shared/error_messages', model: f.object %>
+
   <div class="title">
     <%= f.label :title %>
     <%= f.text_field :title %>
