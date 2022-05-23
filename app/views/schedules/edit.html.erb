@@ -2,6 +2,8 @@
 
 <%= form_with(model: @schedule, local: true) do |f| %>
 
+<%= render 'shared/error_messages', model: f.object %>
+
   <div class="title">
     <%= f.label :title %>
     <%= f.text_field :title %>
@@ -9,7 +11,7 @@
 
   <div class="user-name">
     <%= f.label :user_time %>
-    <%= link_to @schedule.user.nickname %>
+    <%= ': ' + @schedule.user.nickname %>
   </div>
 
   <div class="start-time">
@@ -20,6 +22,11 @@
   <div class="end-time">
     <%= f.label :end_time %>
     <%= f.datetime_select :end_time %>
+  </div>
+
+  <div class="car-name">
+    <%= f.label :car_name %> 
+    <%= f.collection_select(:car_id, Car.all, :id, :car_name, {}, {id:"car-name"}) %>
   </div>
 
   <div class="content">
