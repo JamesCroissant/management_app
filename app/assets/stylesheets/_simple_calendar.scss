@@ -1,6 +1,31 @@
 .simple-calendar {
-  // .day {
-  // }
+  .calendar-heading {
+    font-size: 25px;
+    text-align: center;
+    
+    a{
+      text-decoration: none;
+    }
+  }
+
+  table { 
+    width:90%;
+    // text-align: center;
+    margin: 0 auto;
+    margin-bottom: 50px;
+    
+  }
+
+  th { 
+    text-align:center;
+    box-sizing: border-box;
+    min-width: 150px;
+  }
+
+
+  .day {
+    font-size: 15px;
+  }
   .wday-0 {
     color: #ff505c;
   }

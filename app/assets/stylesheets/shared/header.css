@@ -15,12 +15,38 @@ h1{
   margin :10px;
 }
 
+.nav-left {
+  display:flex;
+  letter-spacing: 1px;
+}
 .nav-right { 
   display: flex;
   letter-spacing: 1px;
+}
+
+.nav-left li { 
+  margin-right: 20px;
 }
 
 .nav-right li { 
   margin-right: 20px;
 }
 
+.brand-list {
+  text-decoration: none;
+}
+.category-list {
+  text-decoration: none;
+}
+.user-nickname {
+  text-decoration: none;
+}
+.logout {
+  text-decoration: none;
+}
+.login {
+  text-decoration: none;
+}
+.sign-up {
+  text-decoration: none;
+}
