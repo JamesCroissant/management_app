@@ -118,10 +118,10 @@
   padding :40px;
 }
 
-.register-red-btn {
+.register-blue-btn {
   width: 100%;
-  background: #230cf5;
-  border: 1px solid #230cf5;
+  background: rgb(134, 214, 241);
+  border: 1px solid rgb(134, 214, 241);
   color: #fff;
   line-height: 48px;
   font-size: 14px;
