@@ -95,6 +95,11 @@
   display: contents;
 }
 
+.indispensable {
+  color: red;
+  padding-left:10px;
+}
+
 
 .form-bottom-text {
   font-size: 15px;
@@ -118,10 +123,10 @@
   padding :40px;
 }
 
-.register-blue-btn {
+.register-red-btn {
   width: 100%;
-  background: rgb(134, 214, 241);
-  border: 1px solid rgb(134, 214, 241);
+  background: #230cf5;
+  border: 1px solid #230cf5;
   color: #fff;
   line-height: 48px;
   font-size: 14px;
