@@ -46,6 +46,7 @@
   color: #888;
   font-size: 15px;
   margin-top: 3px;
+  text-align: center;
 }
 
 .form-info-header {
@@ -60,32 +61,33 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  margin-right: 120px;
 }
 
 .input-name {
-  width: 130px;
-  margin: 5px 20px 0 20px;
+  width: 170px;
+  margin: 15px ;
   height: 48px;
   line-height: 30px;
   padding: 10px 16px 8px;
   border-radius: 4px;
   border: 1px solid #ccc;
   background: #fff;
-  font-size: 14px;
+  font-size: 16px;
   resize: none;
 }
 
 .input-birth-wrap {
   display: flex;
   flex-wrap: wrap;
-  margin:0 auto;
+  padding-left: 65px;
 }
 
 .input-birth-wrap select {
   width: 75px;
   margin-top: 5px;
   height: 45px;
-  padding-left: 10px;
+  padding-left: 20px;
   border-radius: 4px;
   border: 1px solid #ccc;
   background: #fff;
@@ -111,7 +113,7 @@
 
 .form-bottom-text:last-child {
   margin: 0;
-  padding-bottom: 50px;
+  padding-top: 50px;
 }
 
 .form-bottom-text>span {
@@ -137,7 +139,7 @@
 }
 
 .register-info {
-  margin: 30px 180px 0 0;
+  margin: 15px 180px 0 0;
   color: #0099e8;
   text-align: right;
   cursor: pointer;
