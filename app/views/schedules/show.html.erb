@@ -1,40 +1,72 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>タイトル : </strong>
-  <%= @schedule.title %>
-</p>
+<div class='form-header'>
+  <h1 class='form-header-text'>
+    予定詳細ページ
+  </h1>
+</div>
+
+<div class="form-group">
+  <div class='form-text-wrap'>
+    <label class="form-text">タイトル</label>
+  </div>
+  <p class="schedule-show-text"><%= @schedule.title %></p>
+</div>
 
 
-<p>
-  <strong>名前 : </strong>
-  <%= @schedule.user.nickname %>
-</p>
+<div class="form-group">
+  <div class='form-text-wrap'>
+    <label class="form-text">名前</label>
+  </div>
+  <p class="schedule-show-text"><%= @schedule.user.nickname %></p>
+</div>
 
-<p>
-  <strong>日付 : </strong>
-  <%= @schedule.start_time.strftime("%Y-%m-%d") %> 〜
-  <%= @schedule.end_time.strftime("%Y-%m-%d") %>
-</p>
 
-<p>
-  <strong>時間 : </strong>
-  <%= @schedule.start_time.strftime("%H:%M") %> <a>〜</a>
-  <%= @schedule.end_time.strftime("%H:%M") %>
-</p>
+<div class="form-group">
+  <div class='form-text-wrap'>
+    <label class="form-text">日付</label>
+  </div>
+  <p class="schedule-show-text">
+    <%= @schedule.start_time.strftime("%Y-%m-%d") %> 〜
+    <%= @schedule.end_time.strftime("%Y-%m-%d") %>
+  </p>
+</div>
 
-<p>
-  <strong>使う車： </strong> 
-  <%= link_to Car.find(@schedule.car_id).car_name, car_path(@schedule.car_id) %>
-</p>
 
-<p>
-  <strong>内容 : </strong>
-  <%= @schedule.content %>
-</p>
+<div class="form-group">
+  <div class='form-text-wrap'>
+    <label class="form-text">時間</label>
+  </div>
+  <p class="schedule-show-text">
+    <%= @schedule.start_time.strftime("%H:%M") %> <a>〜</a>
+    <%= @schedule.end_time.strftime("%H:%M") %>
+  </p>
+</div>
 
+
+<div class="form-group">
+  <div class='form-text-wrap'>
+    <label class="form-text">使う車</label>
+  </div>
+  <p class="schedule-show-text">
+    <%= link_to Car.find(@schedule.car_id).car_name, car_path(@schedule.car_id), class:"schedule-show-link" %>
+  </p>
+</div>
+
+
+<div class="form-group">
+  <div class='form-text-wrap'>
+    <label class="form-text">内容</label>
+  </div>
+  <p class="schedule-show-text">
+    <%= @schedule.content %>
+  </p>
+</div>
+
+<div class="submit">
 <% if user_signed_in? && current_user.id == @schedule.user_id %>
-  <%= link_to '編集', edit_schedule_path(@schedule.id) ,method: :get %> |
-  <%= link_to '削除', schedule_path(@schedule.id), method: :delete, data: { confirm: 'Are you Sure?' } %> |
+  <%= button_to "編集", edit_schedule_path(@schedule.id), method: :get, class:"edit-btn" %>
+  <%= button_to "削除", schedule_path(@schedule.id), method: :delete, data: { confirm: 'Are you Sure?' } ,class:'delete-btn' %>
 <% end %>
-<%= link_to '戻る', root_path %>
+<%= link_to '戻る', root_path ,class:"back-btn"%>
+</div>

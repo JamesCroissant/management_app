@@ -98,12 +98,14 @@
   border: 1px solid rgb(134, 214, 241);
   color: #fff;
   line-height: 48px;
-  font-size: 14px;
+  font-size: 20px;
   cursor: pointer;
+  border-radius:30px;
+  text-align: center;
 }
 
 .back-btn {
-  width: 100%;
+  width: 10%;
   background: lightgrey;
   border: 1px solid lightgrey;
   color: #fff;
@@ -111,5 +113,6 @@
   font-size: 14px;
   cursor: pointer;
   text-decoration: none;
+  border-radius:30px;
 }
 
