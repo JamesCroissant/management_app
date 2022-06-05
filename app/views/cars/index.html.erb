@@ -1,29 +1,50 @@
-<div class="car-contents">
-  <h1>車一覧</h1>
+<div class='form-header'>
+  <h1 class='form-header-text'>
+    車一覧
+  </h1>
+</div>
+
   <% @cars.each do |car| %>
-    <p> ---------------------------------- </p>
+    <p class="border-line"> ------------------------------------------------------------------------------- </p>
     
-    <p>
-      <strong>車名 : </strong>
-      <%= link_to car.car_name, car_path(car.id) %>
-    </p>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">車名</label>
+      </div>
+      <p class="car-index-text">
+        <%= link_to car.car_name, car_path(car.id), class:"car-index-link" %>
+      </p>
+    </div>
 
-    <p>
-      <strong>持ち主 : </strong>
-      <%= car.user.nickname %>
-    </p>
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">持ち主</label>
+      </div>
+      <p class="car-index-text">
+        <%= car.user.nickname %>
+      </p>
+    </div>
 
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">車のナンバー</label>
+      </div>
+      <p class="car-index-text">
+        <%= car.car_number %>
+      </p>
+    </div>
 
-    <p>
-      <strong>車のナンバー : </strong>
-      <%= car.car_number %>
-    </p>
-
-    <p>
-      <strong>車の種類 : </strong>
-      <%= car.car_model %>
-    </p>
-
+    <div class="form-group">
+      <div class='form-text-wrap'>
+        <label class="form-text">車種</label>
+      </div>
+      <p class="car-index-text">
+        <%= car.car_model %>
+      </p>
+    </div>
   <% end %>
-  <%= link_to '戻る', root_path %>
+
+  <div class="submit">
+    <%= link_to '戻る', root_path, class:'back-btn' %>
+  </div>
 </div>

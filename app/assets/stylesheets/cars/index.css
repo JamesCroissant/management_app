@@ -1,0 +1,25 @@
+.border-line {
+  margin-left:315px;
+  margin-top: 15px;
+}
+
+.car-index-text {
+  font-size:30px;
+  color: rgb(32, 23, 23);
+}
+
+.car-index-link {
+  text-decoration: none;
+}
+
+.back-btn {
+  width: 10%;
+  background: lightgrey;
+  border: 1px solid lightgrey;
+  color: #fff;
+  line-height: 48px;
+  font-size: 18px;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius:30px;
+}
