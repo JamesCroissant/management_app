@@ -27,15 +27,22 @@
     font-size: 15px;
   }
   .wday-0 {
-    color: #ff505c;
+    .schedule-month{
+      color: #ff505c;
+    }
   }
   // .wday-1 {}
   // .wday-2 {}
   // .wday-3 {}
   // .wday-4 {}
   // .wday-5 {}
+  // .wday-6 {
+  //   color: #5984dc;
+  // }
   .wday-6 {
-    color: #5984dc;
+    .schedule-month{
+      color: #5984dc;
+    }
   }
   .today {
     background: #effb05cd;
