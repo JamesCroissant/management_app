@@ -90,6 +90,14 @@
   margin-top: 20px;
 }
 
+.schedule-new-submit {
+  width: 60%;
+  margin: 0 auto;
+  padding: 40px 40px 40px 250px;
+  text-decoration: none;
+  display: flex;
+}
+
 .save-btn {
   width: 100px;
   margin-left: 20px;
