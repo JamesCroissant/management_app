@@ -36,7 +36,6 @@ RSpec.describe Car, type: :model do
       it 'ユーザーが紐づいていなければ登録できない' do
         @car.user = nil
         @car.valid?
-        binding.pry
         expect(@car.errors.full_messages).to include('User must exist')
       end
     end
