@@ -2,7 +2,7 @@ class CarsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   before_action :set_car, only: [:edit, :update, :show, :destroy]
   before_action :move_to_index, only: [:edit, :destroy]
-  
+
   def index
     @cars = Car.all
   end
@@ -52,5 +52,4 @@ class CarsController < ApplicationController
   def move_to_index
     redirect_to action: :index unless @car.user_id == current_user.id
   end
-
 end

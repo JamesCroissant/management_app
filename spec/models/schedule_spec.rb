@@ -26,12 +26,12 @@ RSpec.describe Schedule, type: :model do
       it 'start_timeが現在時刻より前の時間だと登録できない' do
         @schedule.start_time = Time.now - 60 * 60
         @schedule.valid?
-        expect(@schedule.errors.full_messages).to include("Start time は現在の時間以降を選択してください")
+        expect(@schedule.errors.full_messages).to include('Start time は現在の時間以降を選択してください')
       end
       it 'end_timeが開始時刻より前の時間だと登録できない' do
         @schedule.end_time = Time.now
         @schedule.valid?
-        expect(@schedule.errors.full_messages).to include("End time は開始時刻より遅い時間を選択してください")
+        expect(@schedule.errors.full_messages).to include('End time は開始時刻より遅い時間を選択してください')
       end
       it 'スケジュールの時間が被っていて、かつ、同じ種類の車を利用する際は登録できない' do
         car = FactoryBot.create(:car)                    # create：DBにインスタンスを保存する、DBにアクセスする必要がある処理に対応
@@ -42,17 +42,17 @@ RSpec.describe Schedule, type: :model do
         another_schedule.end_time = Time.now + 240 * 60
         @schedule.car_id == another_schedule.car_id
         another_schedule.valid?
-        expect(another_schedule.errors.full_messages).to include("Car はこの時間に使用できません")
+        expect(another_schedule.errors.full_messages).to include('Car はこの時間に使用できません')
       end
       it 'ユーザーが紐づいていなければ登録できない' do
         @schedule.user = nil
         @schedule.valid?
-        expect(@schedule.errors.full_messages).to include("User must exist")
+        expect(@schedule.errors.full_messages).to include('User must exist')
       end
       it '車が紐づいていなければ登録できない' do
         @schedule.car = nil
         @schedule.valid?
-        expect(@schedule.errors.full_messages).to include("Car must exist")
+        expect(@schedule.errors.full_messages).to include('Car must exist')
       end
     end
   end

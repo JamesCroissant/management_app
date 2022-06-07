@@ -18,5 +18,4 @@ class User < ApplicationRecord
   validates :phone_number, presence: true                    # 直す
   validates :phone_number, numericality: { only_integer: true, message: 'is invalid. Input only number' },
                            length: { minimum: 10, maximum: 11 }, allow_blank: true
-
 end
