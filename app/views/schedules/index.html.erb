@@ -1,23 +1,24 @@
+<p id="notice" class="notice"><%= notice %></p>
+
 <%= render "shared/header" %>
 
-<p id="notice"><%= notice %></p>
-
-<h1>Schedules</h1>
-
+<div class='event-car-add'>
 <% if user_signed_in? %>
-  <%= link_to 'イベント追加', new_schedule_path %>
-  <%= link_to '車追加', new_car_path %>
+  <%= link_to '新規車予約', new_schedule_path ,class: 'event-add' %>
+  <%= link_to '車種追加', new_car_path ,class: 'car-add' %>
 <% end %>
+</div>
 
-<div>
+<div class='schedule-lists'>
 <%= month_calendar events: @schedules do |date, schedules| %>
-  <%= date.day %>
+  
+  <div class='schedule-month'><%= date.day %></div>
 
   <div>
   <% schedules.each do |schedule| %>
     <div>
-      <%= schedule.user.nickname %>
-      <%= link_to schedule.title, schedule_path(schedule.id) %>
+      <%= link_to Car.find(schedule.car_id).car_name, car_path(schedule.car_id) ,class:"index-car-name"%>
+      <%= link_to schedule.user.nickname, schedule_path(schedule.id) ,class:"index-user-name"%>
       <br>
       <%= schedule.start_time.strftime("%H:%M") %> <a>〜</a>
       <%= schedule.end_time.strftime("%H:%M") %>

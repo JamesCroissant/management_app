@@ -26,7 +26,7 @@ RSpec.describe Car, type: :model do
       it 'car_numberが数字でしか登録できない' do
         @car.car_number = 'aaaa'
         @car.valid?
-        expect(@car.errors.full_messages).to include("Car number is invalid. Input only number")
+        expect(@car.errors.full_messages).to include('Car number is invalid. Input only number')
       end
       it 'car_modelが空では登録できない' do
         @car.car_model = ''
@@ -37,7 +37,7 @@ RSpec.describe Car, type: :model do
         @car.user = nil
         @car.valid?
         binding.pry
-        expect(@car.errors.full_messages).to include("User must exist")
+        expect(@car.errors.full_messages).to include('User must exist')
       end
     end
   end

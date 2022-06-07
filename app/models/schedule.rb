@@ -12,26 +12,20 @@ class Schedule < ApplicationRecord
   validate :car_valid_check
 
   def start_check
-    self.errors.add(:start_time, "は現在の時間以降を選択してください") if self.start_time < Time.now
+    errors.add(:start_time, 'は現在の時間以降を選択してください') if start_time < Time.now
   end
 
   def start_end_check
-    self.errors.add(:end_time, "は開始時刻より遅い時間を選択してください") if self.start_time > self.end_time
+    errors.add(:end_time, 'は開始時刻より遅い時間を選択してください') if start_time > end_time
   end
 
   def car_valid_check
     overlapped_schedules = Schedule
-      .where(car_id: self.car_id)
-      .where("end_time > ?", self.start_time)
-      .where("start_time < ?", self.end_time)
-      .where.not(id: self.id)                      # 過去に登録したscheduleで引っかからないようにする
+                           .where(car_id: car_id)
+                           .where('end_time > ?', start_time)
+                           .where('start_time < ?', end_time)
+                           .where.not(id: id)                      # 過去に登録したscheduleで引っかからないようにする
 
-    if overlapped_schedules.present?
-      self.errors.add(:car_id, "はこの時間に使用できません")
-    end
+    errors.add(:car_id, 'はこの時間に使用できません') if overlapped_schedules.present?
   end
-
 end
-
-
-

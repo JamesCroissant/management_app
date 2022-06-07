@@ -1,26 +1,39 @@
-<h1>車新規投稿</h1>
+<div class='form-header'>
+  <h1 class='form-header-text'>
+    車種追加
+  </h1>
+</div>
+
 
 <%= form_with(model: @car, local: true) do |f| %>
 
 <%= render 'shared/error_messages', model: f.object %>
 
-  <div class="car_name">
-    <%= f.label :car_name %>
-    <%= f.text_field :car_name %>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">車名</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :car_name, class:"input-default", id:"password", placeholder:"" %>
   </div>
 
-  <div class="car_number">
-    <%= f.label :car__number %>
-    <%= f.text_field :car_number %>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">車のナンバー</label>
+      <span class="indispensable">必須</span>
+    </div>
+    <%= f.text_field :car__number, class:"input-default", id:"password", placeholder:"" %>
   </div>
 
-  <div class="car_model">
-    <%= f.label :car_model %>
-    <%= f.text_field :car_model %>
+  <div class="form-group">
+    <div class='form-text-wrap'>
+      <label class="form-text">車種</label>
+    </div>
+    <%= f.text_field :car_model, class:"input-default", id:"password", placeholder:"" %>
   </div>
 
 
-  <div class="submit">
+  <div class="car-new-submit">
     <%= f.submit "保存する", class:"save-btn"%>
     <%= link_to "戻る", root_path, class:"back-btn"%>
   </div>

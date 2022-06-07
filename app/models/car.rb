@@ -10,4 +10,3 @@ class Car < ApplicationRecord
 
   validates :car_number, numericality: { only_integer: true, message: 'is invalid. Input only number' }, allow_blank: true
 end
-

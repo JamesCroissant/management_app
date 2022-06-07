@@ -1,28 +1,43 @@
 <p id="notice"><%= notice %></p>
+<div class='form-header'>
+  <h1 class='form-header-text'>
+    車詳細ページ
+  </h1>
+</div>
 
-<p>
-  <strong>車名 : </strong>
-  <%= @car.car_name %>
-</p>
 
+<div class="form-group">
+  <div class='form-text-wrap'>
+    <label class="form-text">車名</label>
+  </div>
+  <p class="schedule-show-text"><%= @car.car_name %></p>
+</div>
 
-<p>
-  <strong>持ち主 : </strong>
-  <%= @car.user.nickname %>
-</p>
+<div class="form-group">
+  <div class='form-text-wrap'>
+    <label class="form-text">持ち主</label>
+  </div>
+  <p class="schedule-show-text"><%= @car.user.nickname %></p>
+</div>
 
-<p>
-  <strong>車のナンバー : </strong>
-  <%= @car.car_number %>
-</p>
+<div class="form-group">
+  <div class='form-text-wrap'>
+    <label class="form-text">車のナンバー</label>
+  </div>
+  <p class="schedule-show-text"><%= @car.car_number %></p>
+</div>
 
-<p>
-  <strong>車の種類 : </strong>
-  <%= @car.car_model %>
-</p>
+<div class="form-group">
+  <div class='form-text-wrap'>
+    <label class="form-text">車種</label>
+  </div>
+  <p class="schedule-show-text"><%= @car.car_model %></p>
+</div>
 
+<div class="submit">
 <% if user_signed_in? && current_user.id == @car.user_id %>
-  <%= link_to '編集', edit_car_path(@car.id) ,method: :get %> |
-  <%= link_to '削除', car_path(@car.id), method: :delete, data: { confirm: 'Are you Sure?' } %> |
+  <%= button_to "編集", edit_car_path(@car.id), method: :get, class:"edit-btn" %>
+  <%= button_to "削除", car_path(@car.id), method: :delete, data: { confirm: 'Are you Sure?' } ,class:'delete-btn' %>
 <% end %>
-<%= link_to '戻る', root_path %>
+<%= link_to '戻る', root_path ,class:"back-btn"%>
+</div>
