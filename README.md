@@ -63,10 +63,10 @@ Car Sharing
 # URL
 
 # テスト用アカウント
-・Basic認証パスワード・・・0501
-・Basic認証ID・・・James
-・メールアドレス・・・rino@email.com
-・パスワード・・・rino123
+・Basic認証パスワード : 0501
+・Basic認証ID : James
+・メールアドレス : rino@email.com
+・パスワード : rino123
 
 # 利用方法
 1. トップページ（一覧ページ）のヘッダーからユーザー新規登録を行う
@@ -77,5 +77,28 @@ Car Sharing
 
 # 洗い出した要件
 https://docs.google.com/spreadsheets/d/1SuE28LFn7pAVjDvo-IjwWNuj2pFoy7X7NPplziJgS4A/edit#gid=982722306
+
+
+# データベース設計
+https://gyazo.com/a8fd0edd18d8872ac4999cd6a3f5c956
+
+# 画面遷移図
+https://gyazo.com/a2cd9acfdb80dfe1905c571abad65c0e
+
+# 開発環境
+・フロントエンド : html,css
+・バックエンド : rails
+・テスト : rspec
+・テキストエディタ : visual studio code
+・タスク管理 : github
+
+# ローカルでの動作環境
+% git clone https://github.com/management_app
+% cd management_app
+% bundle install
+% yarn install
+
+# 工夫したポイント
+ダブルブッキングを防ぐ為に場合分けの機能を施した。
 
 
